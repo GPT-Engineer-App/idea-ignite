@@ -1,25 +1,32 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
+import { Box, Flex, Button } from "@chakra-ui/react";
 
 function Navigation() {
   return (
     <Box bg="teal.500" p={4}>
       <Flex justify="space-between">
-        <Link as={RouterLink} to="/" color="white" fontSize="lg">
+        <Button as={Link} to="/" colorScheme="teal" variant="ghost">
           Home
-        </Link>
-        <Link as={RouterLink} to="/ai-prompt" color="white" fontSize="lg">
+        </Button>
+        <Button as={Link} to="/ai-prompt" colorScheme="teal" variant="ghost">
           AI Prompt
-        </Link>
-        <Link as={RouterLink} to="/creative-professionals" color="white" fontSize="lg">
+        </Button>
+        <Button as={Link} to="/creative-professionals" colorScheme="teal" variant="ghost">
           Creative Professionals
-        </Link>
-        <Link as={RouterLink} to="/students-researchers" color="white" fontSize="lg">
+        </Button>
+        <Button as={Link} to="/students-researchers" colorScheme="teal" variant="ghost">
           Students & Researchers
-        </Link>
-        <Link as={RouterLink} to="/business-professionals" color="white" fontSize="lg">
+        </Button>
+        <Button as={Link} to="/business-professionals" colorScheme="teal" variant="ghost">
           Business Professionals
-        </Link>
+        </Button>
+        <Button as={Link} to="/technical-writers" colorScheme="teal" variant="ghost">
+          Technical Writers
+        </Button>
+        <Button as={Link} to="/ai-enthusiasts" colorScheme="teal" variant="ghost">
+          AI Enthusiasts
+        </Button>
       </Flex>
     </Box>
   );

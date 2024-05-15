@@ -5,6 +5,8 @@ import Navigation from "./components/Navigation.jsx";
 import CreativeProfessionals from "./pages/CreativeProfessionals.jsx";
 import StudentsResearchers from "./pages/StudentsResearchers.jsx";
 import BusinessProfessionals from "./pages/BusinessProfessionals.jsx";
+import TechnicalWriters from "./pages/TechnicalWriters.jsx";
+import AIEnthusiasts from "./pages/AIEnthusiasts.jsx";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route exact path="/creative-professionals" element={<CreativeProfessionals />} />
         <Route exact path="/students-researchers" element={<StudentsResearchers />} />
         <Route exact path="/business-professionals" element={<BusinessProfessionals />} />
+        <Route exact path="/technical-writers" element={<TechnicalWriters />} />
+        <Route exact path="/ai-enthusiasts" element={<AIEnthusiasts />} />
       </Routes>
     </Router>
   );
