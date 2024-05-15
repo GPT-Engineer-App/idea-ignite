@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Container, VStack, HStack, Input, Textarea, Button, Box, Text, IconButton } from "@chakra-ui/react";
-import { FaTrash, FaPlus, FaExchangeAlt } from "react-icons/fa";
+import { Container, VStack, HStack, Input, Textarea, Box, Text, IconButton } from "@chakra-ui/react";
+import { FaTrash, FaPlus } from "react-icons/fa";
+import RoleSwapButton from "../components/RoleSwapButton.jsx";
 
 const Index = () => {
   const [notes, setNotes] = useState([]);
@@ -48,7 +49,7 @@ const Index = () => {
                   {note.title}
                 </Text>
                 <HStack>
-                  <IconButton aria-label="Swap Role" icon={<FaExchangeAlt />} onClick={() => swapRole(index)} />
+                  <RoleSwapButton onSwap={() => swapRole(index)} />
                   <IconButton aria-label="Delete Note" icon={<FaTrash />} onClick={() => deleteNote(index)} />
                 </HStack>
               </HStack>
