@@ -13,16 +13,16 @@ function Navigation() {
           AI Prompt
         </Button>
         <Button as={Link} to="/creative-professionals" colorScheme="teal" variant="ghost">
-          Creative Professionals
+          Creative Pros
         </Button>
         <Button as={Link} to="/students-researchers" colorScheme="teal" variant="ghost">
           Students & Researchers
         </Button>
         <Button as={Link} to="/business-professionals" colorScheme="teal" variant="ghost">
-          Business Professionals
+          Business Pros
         </Button>
         <Button as={Link} to="/technical-writers" colorScheme="teal" variant="ghost">
-          Technical Writers
+          Tech Writers
         </Button>
         <Button as={Link} to="/ai-enthusiasts" colorScheme="teal" variant="ghost">
           AI Enthusiasts

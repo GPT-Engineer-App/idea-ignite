@@ -34,13 +34,13 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" py={8}>
+    <Container centerContent maxW="container.md" py={8} bg="gray.50">
       <VStack spacing={4} width="100%">
-        <HStack width="100%">
+        <HStack width="100%" spacing={2}>
           <Input placeholder="Idea Title" value={title} onChange={(e) => setTitle(e.target.value)} />
           <IconButton aria-label="Add Note" icon={<FaPlus />} onClick={addNote} />
         </HStack>
-        <Textarea placeholder="Ignite your idea..." value={content} onChange={(e) => setContent(e.target.value)} />
+        <Textarea placeholder="Ignite your idea..." value={content} onChange={(e) => setContent(e.target.value)} resize="vertical" />
         <VStack spacing={4} width="100%">
           {notes.map((note, index) => (
             <Box key={index} p={4} borderWidth="1px" borderRadius="md" width="100%">
@@ -50,7 +50,7 @@ const Index = () => {
                 </Text>
                 <HStack>
                   <RoleSwapButton onSwap={() => swapRole(index)} />
-                  <IconButton aria-label="Delete Note" icon={<FaTrash />} onClick={() => deleteNote(index)} />
+                  <IconButton aria-label="Delete Note" icon={<FaTrash />} onClick={() => deleteNote(index)} colorScheme="red" />
                 </HStack>
               </HStack>
               <Text mt={2} color={note.role === "user" ? "green.500" : "blue.500"}>
