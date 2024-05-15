@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Container, VStack, HStack, Input, Textarea, Button, Box, Text, IconButton } from "@chakra-ui/react";
-import { FaTrash, FaPlus } from "react-icons/fa";
+import { FaTrash, FaPlus, FaExchangeAlt } from "react-icons/fa";
 
 const Index = () => {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  const [role, setRole] = useState("user");
+
   const addNote = () => {
     if (title.trim() && content.trim()) {
-      setNotes([...notes, { title, content }]);
+      setNotes([...notes, { title, content, role }]);
       setTitle("");
       setContent("");
     }
@@ -17,6 +19,16 @@ const Index = () => {
 
   const deleteNote = (index) => {
     const newNotes = notes.filter((_, i) => i !== index);
+    setNotes(newNotes);
+  };
+
+  const swapRole = (index) => {
+    const newNotes = notes.map((note, i) => {
+      if (i === index) {
+        return { ...note, role: note.role === "user" ? "model" : "user" };
+      }
+      return note;
+    });
     setNotes(newNotes);
   };
 
@@ -32,12 +44,17 @@ const Index = () => {
           {notes.map((note, index) => (
             <Box key={index} p={4} borderWidth="1px" borderRadius="md" width="100%">
               <HStack justifyContent="space-between">
-                <Text fontSize="xl" fontWeight="bold">
+                <Text fontSize="xl" fontWeight="bold" color={note.role === "user" ? "green.500" : "blue.500"}>
                   {note.title}
                 </Text>
-                <IconButton aria-label="Delete Note" icon={<FaTrash />} onClick={() => deleteNote(index)} />
+                <HStack>
+                  <IconButton aria-label="Swap Role" icon={<FaExchangeAlt />} onClick={() => swapRole(index)} />
+                  <IconButton aria-label="Delete Note" icon={<FaTrash />} onClick={() => deleteNote(index)} />
+                </HStack>
               </HStack>
-              <Text mt={2}>{note.content}</Text>
+              <Text mt={2} color={note.role === "user" ? "green.500" : "blue.500"}>
+                {note.content}
+              </Text>
             </Box>
           ))}
         </VStack>
