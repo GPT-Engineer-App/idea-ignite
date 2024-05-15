@@ -11,6 +11,15 @@ function Navigation() {
         <Link as={RouterLink} to="/ai-prompt" color="white" fontSize="lg">
           AI Prompt
         </Link>
+        <Link as={RouterLink} to="/creative-professionals" color="white" fontSize="lg">
+          Creative Professionals
+        </Link>
+        <Link as={RouterLink} to="/students-researchers" color="white" fontSize="lg">
+          Students & Researchers
+        </Link>
+        <Link as={RouterLink} to="/business-professionals" color="white" fontSize="lg">
+          Business Professionals
+        </Link>
       </Flex>
     </Box>
   );
